@@ -8,8 +8,24 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.4",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "cube-ui": "^1.12.46",
+    "vue": "^2.6.11",
+    "vue-router": "^3.4.9"
+  },
+  "transformModules": {
+    "cube-ui": {
+      "transform": "cube-ui/lib/${member}",
+      "kebabCase": true,
+      "style": {
+        "ignore": [
+          "create-api",
+          "better-scroll",
+          "locale"
+        ]
+      }
+    }
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -18,7 +34,14 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-axios": "~0.0.4",
+    "vue-cli-plugin-cube-ui": "^0.2.5",
+    "vue-loader": "^13.3.0",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-transform-modules-plugin": "^0.4.3"
   },
   "eslintConfig": {
     "root": true,
