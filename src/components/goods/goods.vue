@@ -206,13 +206,26 @@ export default {
                 .price
                   font-size: 14px
                   color: #f01414
-
               .cart-controll
                 position: absolute
                 font-size: 24px
                 color: #00a0dc
                 right: 2px
                 bottom: 2px
+                .cart-decrease
+                  display: inline-block
+                  &.move-enter
+                    opacity: 0.1
+                    transform: translate3d(-30px, 0, 0) rotate(180dpg)
+                  &.move-enter-active
+                    transition: all 0.4 linear
+                  &.move-enter-to
+                    opacity: 1
+                    -webkit-transform: translate3d(0,0,0) rotate(0dpg)
+                    -moz-transform: translate3d(0,0,0) rotate(0dpg)
+                    -ms-transform: translate3d(0,0,0) rotate(0dpg)
+                    -o-transform: translate3d(0,0,0) rotate(0dpg)
+                    transform: translate3d(0,0,0) rotate(0dpg)
       .cube-sticky-fixed
         font-size: 12px
   .shop-cart-wrapper

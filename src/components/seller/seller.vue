@@ -51,11 +51,17 @@
           <div class="line-split"></div>
           <div class="pics">
             <h2>商家实景</h2>
-            <ul v-if="seller_data.data">
-              <li :key="index" v-for="(item,index) in seller_data.data.pics" class="pic-item">
-                <img :src="item" class="pic-item">
-              </li>
-            </ul>
+            <cube-scroll
+              ref="scroll"
+              direction="horizontal"
+              class="horizontal-scroll-list-wrap"
+            >
+              <ul v-if="seller_data.data" class="list-wrapper">
+                <li :key="index" v-for="(item,index) in seller_data.data.pics" class="pic-item">
+                  <img :src="item" class="pic-item" alt="picture">
+                </li>
+              </ul>
+            </cube-scroll>
           </div>
           <div class="line-split"></div>
           <div class="infos">
@@ -240,17 +246,26 @@ export default {
         border-top: 1px solid rgba(7, 17, 27, .1)
         border-bottom: 1px solid rgba(7, 17, 27, .1)
       .pics
-        ul
-          padding: 0
-          margin: 0
-          .pic-item
-            display: inline-flex
-            font-size: 20px
-            flex: 1
-            width: 120px
-            height: 90px
-            margin-left: 9px
-            list-style: none
+        .horizontal-scroll-list-wrap
+          border: 1px solid rgba(0, 0, 0, 0.1)
+          border-radius: 5px
+          .cube-scroll-content
+            display: inline-block
+          .list-wrapper
+            padding: 0 10px
+            line-height: 60px
+            white-space: nowrap
+          ul
+            padding: 0
+            margin: 0
+            display: flex
+            .pic-item
+              font-size: 20px
+              flex: 1
+              width: 120px
+              height: 90px
+              margin-left: 9px
+              list-style: none
       .infos
         h2
         ul
